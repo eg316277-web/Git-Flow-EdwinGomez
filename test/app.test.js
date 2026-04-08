@@ -1,4 +1,4 @@
-import {saludar, despedir, estadoSistema} from "../src/app.js"
+import {saludar, despedir, estadoSistema, sumar} from "../src/app.js"
 
 function ejecutarPruebas(){
   let pasadas = 0;
@@ -22,10 +22,17 @@ function ejecutarPruebas(){
     fallidas++;
   }
 
-  // Corrección en la concatenación de resultados
+  const resultadoSuma = sumar(10, 5);
+  if (resultadoSuma === 15) {
+    console.log("Test 3 pasado: funcion sumar(10, 5) es correcta (15)");
+    pasadas++;
+  } else {
+    console.log("Test 3 fallido: se esperaba 15, se obtuvo", resultadoSuma);
+    fallidas++;
+  }
+
   console.log("\nResultados: " + pasadas + " pasadas, " + fallidas + " fallidas");
 
-  // Corrección: es "process" (con doble 's'), no "procces"
   if(fallidas > 0) process.exit(1);
 }
 
