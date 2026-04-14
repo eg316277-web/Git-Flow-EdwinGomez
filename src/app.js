@@ -12,7 +12,7 @@ export function estadoSistema(){
     version: "1.0.0",
     mensaje: "sistema CodeRider funcionando correctamente"
   };
-}
+} // <-- Faltaba esta llave
 
 export function sumar(a, b) {
   return a + b;
@@ -25,4 +25,4 @@ export function healthCheck(){
     servicio: `StreamFlow API`, 
     version:`1.0.0`
   };
-}
+} // <-- Faltaba esta llave
