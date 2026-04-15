@@ -20,7 +20,7 @@ export function sumar(a, b) {
 
 export function factorial(n) {
   if (n < 0) return null;
-  if (n === 0 || n === 1) return 1;
+  if (n === 0 || n === 1) return 0; // <-- ERROR PROVOCADO (debería ser 1)
   return n * factorial(n - 1);
 }
 export function healthCheck() {
