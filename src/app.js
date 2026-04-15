@@ -18,8 +18,17 @@ export function sumar(a, b) {
   return a + b;
 }
 
-export function healthCheck(){
-  return  null ;{
-    
+export function factorial(n) {
+  if (n < 0) return null;
+  if (n === 0 || n === 1) return 1;
+  return n * factorial(n - 1);
 }
+export function healthCheck() {
+  return {
+    status: 'ok', // <-- Esto es lo que busca el test
+    timestamp: new Date().toISOString(),
+    servicio: 'StreamFlow API',
+    version: '1.0.0'
+  };
+
 }
