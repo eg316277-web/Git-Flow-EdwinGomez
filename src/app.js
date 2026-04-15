@@ -20,7 +20,9 @@ export function sumar(a, b) {
 
 export function factorial(n) {
   if (n < 0) return null;
-  if (n === 0 || n === 1) return 1;
+  if (n === 0 || n === 1) return 0; // <--- ERROR PROVOCADO PARA EL HOTFIX
+  
+  // Usaremos la lógica de bucle para evitar el error de recursión previo
   let res = 1;
   for (let i = 2; i <= n; i++) {
     res *= i;
