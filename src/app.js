@@ -20,15 +20,21 @@ export function sumar(a, b) {
 
 export function factorial(n) {
   if (n < 0) return null;
-  if (n === 0 || n === 1) return 0; // <-- ERROR PROVOCADO (debería ser 1)
-  return n * factorial(n - 1);
+  // Arreglamos el error provocado de una vez para que los tests pasen
+  if (n === 0 || n === 1) return 1; 
+  
+  let res = 1;
+  for (let i = 2; i <= n; i++) {
+    res *= i;
+  }
+  return res;
 }
-export function healthCheck() {
+
+export function healthCheck(){
   return {
-    status: 'ok', // <-- Esto es lo que busca el test
+    status: 'ok',
     timestamp: new Date().toISOString(),
     servicio: 'StreamFlow API',
     version: '1.0.0'
   };
-
 }

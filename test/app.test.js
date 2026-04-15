@@ -6,7 +6,7 @@ function ejecutarPruebas() {
 
   // Test 1: Saludar
   const r1 = saludar("Rider");
-  if (r1.includes("Rider")) {
+  if (r1 && r1.includes("Rider")) {
     console.log("Test 1 pasado: funcion saludar en CodeRider es correcta");
     pasadas++;
   } else {
@@ -34,7 +34,7 @@ function ejecutarPruebas() {
     fallidas++;
   }
 
-  // Test 4: HealthCheck (Con protección para nulos)
+  // Test 4: HealthCheck
   const health = healthCheck();
   if (health && health.status === 'ok') {
     console.log("Test 4 pasado: healthCheck funciona");
@@ -44,7 +44,7 @@ function ejecutarPruebas() {
     fallidas++;
   }
 
-  // Test 5: Factorial (La que había desaparecido)
+  // Test 5: Factorial
   const resFactorial = factorial(5);
   if (resFactorial === 120) {
     console.log("Test 5 pasado: factorial(5) es correcto (120)");
