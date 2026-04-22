@@ -1,3 +1,5 @@
+name: CI pipeline - coderider
+
 on: 
   push: 
     branches: [main, develop]
