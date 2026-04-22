@@ -1,0 +1,30 @@
+name: Deploy - coderider despliegue
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  Deploy:
+    name: Desplegar a produccion
+    runs-on: ubuntu-latest  # Se cambió 'run-on' por 'runs-on'
+
+    steps:
+      - name: checkout del codigo
+        uses: actions/checkout@v4
+
+      - name: configurar node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: instalar y probar
+        run: |
+          npm install
+          npm test
+
+      - name: Desplegar aplicacion
+        run: |
+          echo "iniciando despliegue de aplicacion coderider v$(node -p "require('./package.json').version")"
+          echo "sistema desplegado correctamente"
+          echo "url: https://streamflow.example.com"
